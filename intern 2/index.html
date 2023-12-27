@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Image Text Editor</title>
+</head>
+<body>
+
+  <div id="toolbar">
+    <input type="file" id="imageInput" accept="image/*" onchange="addImage()">
+    <button onclick="addImage()">Add Image</button>
+
+    <textarea id="textInput" placeholder="Enter text..."></textarea>
+    <button onclick="addText()">Add Text</button>
+
+    <select id="followDropdown" onchange="changeFollow()">
+      <option value="follow">Follow</option>
+      <option value="unfollow">Unfollow</option>
+    </select>
+
+    <input type="number" id="fontSizeInput" name="fontSize" placeholder="Font Size" min="1" max="100" oninput="changeFontSize()">
+
+    <input type="color" id="colorPicker" onchange="changeTextColor()">
+
+    <select id="fontFamilyDropdown" onchange="changeFontFamily()">
+      <option value="Arial, sans-serif">Arial</option>
+      <option value="Times New Roman, serif">Times New Roman</option>
+      <option value="Courier New, monospace">Courier New</option>
+      <option value="Verdana, sans-serif">Verdana</option>
+      <!-- Add more options as needed -->
+    </select>
+
+    <button onclick="undo()">Undo</button>
+    <button onclick="redo()">Redo</button>
+  </div>
+
+  <div id="editorContainer">
+    <div id="imageContainer"></div>
+    <div id="textContainer"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
